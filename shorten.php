@@ -16,11 +16,13 @@ if($main_dir = opendir($main_dir)){
 
 
 //Get url
-$url_location = $_GET['url_location'];
-
-if ($url_location == ""){
+if(isset($_GET['url_location'])){
+	$url_location = $_GET['url_location'];
+}else{
 	$url_location = $_POST['url_location'];
 }
+
+
 
 //Start shortening URL
 if ($url_location == "http://"){
@@ -45,10 +47,10 @@ else{
 		}
 		//Database
 		$SQL = "select * from urls where url_location='$url_location'";
-		$result = mysql_db_query($db,$SQL,$cid);
-		if(!$result) { echo (mysql_error()); }
+		$result = mysqli_query($cid,$SQL);
+		if(!$result) { echo (mysqli_error()); }
 		else{
-		$row = mysql_fetch_array($result);
+		$row = mysqli_fetch_array($result);
 		}	
 		
 		if ($url_location == $row["url_location"]){ //If URL Exists Load TAG
@@ -62,9 +64,9 @@ else{
 			}
 			//Insert into the database
 			$SQL = "INSERT INTO urls (url_location, url_tag, time_made) VALUES ('$url_location', '$url_tag', NOW())";
-			$result = mysql_db_query($db, $SQL, $cid);
+			$result = mysqli_query($cid,$SQL);
 			if (!$result) {
-				echo(mysql_error());
+				echo(mysqli_error());
 			}
 		}
 		include ('home.php');

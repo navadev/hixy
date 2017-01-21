@@ -1,21 +1,22 @@
 <?
 session_start();
 
-//Set variables
-$email = $_POST['email'];
-$inquiry = $_POST['inquiry'];
-$captcha = $_POST['captcha'];
-//
+
 
 // Catpcha
-if (!isset($_SESSION['captchaid']))
+if (!isset($_SESSION['captchaid'])){
   $_SESSION['captchaid'] = rand(0, 5);
-  
+}
 $questions = array("4 + 6", "3 + 1", "3 + 5", "8 - 3", "4 - 2", "10-4");
 $answers = array(10, 4, 8, 5, 2, 6);
   
 // Email
  if (isset($_POST['submit'])){
+	 //Set variables
+		$email = $_POST['email'];
+		$inquiry = $_POST['inquiry'];
+		$captcha = $_POST['captcha'];
+	//
       if ($email == "" || $inquiry == "" || $captcha == "") {
           $message = "<h1>One or more fields are blank. All fields are required.</h1>";
       } else {
@@ -23,10 +24,10 @@ $answers = array(10, 4, 8, 5, 2, 6);
           $message = "<h1>That email is invalid.</h1>";
           } else {
               if (isset($_POST['captcha'])) {
-                                  if ($_POST['captcha'] != $answers[$_SESSION['captchaid']]) {
+                            if ($_POST['captcha'] != $answers[$_SESSION['captchaid']]) {
                                   $message = "<h1>Sorry, the answer to the captcha is wrong.</h1>";
-                                  }
-                                 else{
+                            }
+                            else{
                             mail('admin@hixy.org','Email from Hixy.org', $inquiry);
 							$message = "<h1 style='color:green'>Thank you for your message.</h1>";
                             unset($_SESSION['captchaid']);
