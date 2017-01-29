@@ -2,10 +2,6 @@
 include ('dbconn.php');
 include ('clean.php');
 
-//Put system tags into an array
-$main_dir = './';
-$system_tags = array();
-
 //Get url
 if (isset($_GET['url_location'])) {
     $url_location = clean($_GET['url_location'], $cid);
