@@ -1,7 +1,5 @@
-<?
+<?php
 session_start();
-
-
 
 // Catpcha
 if (!isset($_SESSION['captchaid'])){
@@ -11,32 +9,29 @@ $questions = array("4 + 6", "3 + 1", "3 + 5", "8 - 3", "4 - 2", "10-4");
 $answers = array(10, 4, 8, 5, 2, 6);
   
 // Email
- if (isset($_POST['submit'])){
-     //Set variables
-        $email = $_POST['email'];
-        $inquiry = $_POST['inquiry'];
-        $captcha = $_POST['captcha'];
-    //
-      if ($email == "" || $inquiry == "" || $captcha == "") {
-          $message = "<h1>One or more fields are blank. All fields are required.</h1>";
-      } else {
-        if (!preg_match("/[a-zA-Z0-9.-_+]+@[a-zA-Z0-9-]+.[a-zA-Z]+/", $email)) {
-          $message = "<h1>That email is invalid.</h1>";
-          } else {
-              if (isset($_POST['captcha'])) {
-                            if ($_POST['captcha'] != $answers[$_SESSION['captchaid']]) {
-                                  $message = "<h1>Sorry, the answer to the captcha is wrong.</h1>";
-                            }
-                            else{
-                            mail('admin@hixy.org','Email from Hixy.org', $inquiry);
-                            $message = "<h1 style='color:green'>Thank you for your message.</h1>";
-                            unset($_SESSION['captchaid']);
-                            $_SESSION['captchaid'] = rand(0, 5);
-                          }
-                      }
-                  }
-              }
+if (isset($_POST['submit'])) {
+    $email = $_POST['email'];
+    $inquiry = $_POST['inquiry'];
+    $captcha = $_POST['captcha'];
+
+    if ($email == "" || $inquiry == "" || $captcha == "") {
+        $message = "<h1>One or more fields are blank. All fields are required.</h1>";
     }
+    else if (!preg_match("/[a-zA-Z0-9.-_+]+@[a-zA-Z0-9-]+.[a-zA-Z]+/", $email)) {
+        $message = "<h1>That email is invalid.</h1>";
+    }
+    else if (isset($_POST['captcha'])) {
+        if ($_POST['captcha'] != $answers[$_SESSION['captchaid']]) {
+            $message = "<h1>Sorry, the answer to the captcha is wrong.</h1>";
+        }
+        else {
+            mail('admin@hixy.org','Email from Hixy.org', $inquiry);
+            $message = "<h1 style='color:green'>Thank you for your message.</h1>";
+            unset($_SESSION['captchaid']);
+            $_SESSION['captchaid'] = rand(0, 5);
+        }
+    }
+}
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -62,17 +57,15 @@ $answers = array(10, 4, 8, 5, 2, 6);
         </div>
         
         <div id="contact">
-          <form action="<? echo $PHP_SELF; ?>" method="post">
-          <?
-            if(isset($message)){
-                echo "<div id=\"error\">";
-                echo $message;
-                echo "</div>";
+          <form action="" method="post">
+          <?php
+            if (isset($message)) {
+                echo '<div id="error">'. $message .'</div>';
             }
           ?>
           <p>Email:</p><input name="email" type="text" size="22" />
           <p>Inquiry:</p><textarea name="inquiry" cols="22" rows="3"></textarea>
-          <p>What's <? echo $questions[$_SESSION['captchaid']]; ?>?:</p><input name="captcha" type="text" size="22" />
+          <p>What's <?php echo $questions[$_SESSION['captchaid']]; ?>?:</p><input name="captcha" type="text" size="22" />
           <input type="submit" name="submit" value="Submit" class="submit" />
           </form>
         </div>
