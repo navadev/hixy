@@ -1,147 +1,147 @@
-body{
-font: bold 11px arial;
-text-align: center;
-padding: 100px 0 20px 0; 
+body {
+    font: bold 11px arial;
+    text-align: center;
+    padding: 100px 0 20px 0; 
 }
-a{
-color: #68AF00;
-text-decoration: none;
+a {
+    color: #68AF00;
+    text-decoration: none;
 }
-a:hover{
-text-decoration: none;
-border-bottom:1px dotted #68AF00;
+a:hover {
+    text-decoration: none;
+    border-bottom:1px dotted #68AF00;
 }
-h1{
-font-size: 100%;
+h1 {
+    font-size: 100%;
 }
 ul {
-list-style:none;
-padding:5px 0 10px 0;
-margin: 0;
+    list-style:none;
+    padding:5px 0 10px 0;
+    margin: 0;
 }
 	
 ul li {
-display:inline;
-padding-right:10px;
-margin: 0;
+    display:inline;
+    padding-right:10px;
+    margin: 0;
 }
-.wrapper{
-margin: auto;
-width: 400px;
+.wrapper {
+    margin: auto;
+    width: 400px;
 }
-#logo .noborder{
-border: none;
+#logo .noborder {
+    border: none;
 }
-#description{
-margin: 0;
-padding: 0;
+#description {
+    margin: 0;
+    padding: 0;
 }
-form{
-margin: 0;
-padding: 0;
+form {
+    margin: 0;
+    padding: 0;
 }
-#description h1{
-margin: 0;
-padding: 0;
+#description h1 {
+    margin: 0;
+    padding: 0;
 
 }
-#description .url_location{
-border: 1px solid #ccc;
-font: bold 13px arial;
+#description .url_location {
+    border: 1px solid #ccc;
+    font: bold 13px arial;
 }
-#description .url_submit{
-border: 1px solid #ccc;
-font: bold  12.5px arial;
-width: 35px;
-background: #eee;
-color: #434343;
+#description .url_submit {
+    border: 1px solid #ccc;
+    font: bold  12.5px arial;
+    width: 35px;
+    background: #eee;
+    color: #434343;
 }
-#terms{
-text-align: left;
-margin: 0px 0 5px 0;
-padding: 0px 0 5px 0;
+#terms {
+    text-align: left;
+    margin: 0px 0 5px 0;
+    padding: 0px 0 5px 0;
 }
-#terms p{
-margin:0 0 7px 0;
+#terms p {
+    margin:0 0 7px 0;
 }
-#terms .answer{
-margin-left: 5px;
+#terms .answer {
+    margin-left: 5px;
 }
-#contact{
-margin:0 0 10px 0;
+#contact {
+    margin:0 0 10px 0;
 }
-#contact p{
-margin:0 0 2px 0;
+#contact p {
+    margin:0 0 2px 0;
 }
-#contact textarea{
-border: 1px solid #ccc;
-font: bold  12.5px arial;
-margin:0 0 2px 0;
-width:200px;
+#contact textarea {
+    border: 1px solid #ccc;
+    font: bold  12.5px arial;
+    margin:0 0 2px 0;
+    width:200px;
 }
-#contact input{
-border: 1px solid #ccc;
-font: bold  12.5px arial;
-margin:0px 0 2px 0;
-width:200px;
+#contact input {
+    border: 1px solid #ccc;
+    font: bold  12.5px arial;
+    margin:0px 0 2px 0;
+    width:200px;
 }
-#contact .submit{
-font: bold  12.5px arial;
-border: 1px solid #ccc;
-margin: auto;
-width: auto;
-margin-top: 5px;
-display: block;
+#contact .submit {
+    font: bold  12.5px arial;
+    border: 1px solid #ccc;
+    margin: auto;
+    width: auto;
+    margin-top: 5px;
+    display: block;
 }
-#generated{
-background: #f3f3f3;
-margin: 5px 0 5px 0;
-padding: 5px 0 5px 0;
+#generated {
+    background: #f3f3f3;
+    margin: 5px 0 5px 0;
+    padding: 5px 0 5px 0;
 }
-#generated a{
-margin-left: 5px;
+#generated a {
+    margin-left: 5px;
 }
-#generated .short_url{
-border: 1px solid #ccc;
-font: 12.5px arial;
-background: #fff;
+#generated .short_url {
+    border: 1px solid #ccc;
+    font: 12.5px arial;
+    background: #fff;
 
 }
-#generated .long_url{
-width: 300px;
-font: 11px arial;
-text-align: justify;
+#generated .long_url {
+    width: 300px;
+    font: 11px arial;
+    text-align: justify;
 }
-#data{
-background: #f3f3f3;
-margin: 5px 0 5px 0;
-padding: 5px 0 5px 0;
+#data {
+    background: #f3f3f3;
+    margin: 5px 0 5px 0;
+    padding: 5px 0 5px 0;
 }
-h3{
-margin:2px 0 4px 0;
-font-size: 15px;
+h3 {
+    margin:2px 0 4px 0;
+    font-size: 15px;
 }
-#data h1{
-margin:2px 0 2px 0;
-font-size: 12px;
-font-weight: normal;
-padding: 0;
+#data h1 {
+    margin:2px 0 2px 0;
+    font-size: 12px;
+    font-weight: normal;
+    padding: 0;
 }
-#error{
-background: #f3f3f3;
-margin: 5px 0 5px 0;
-padding: 5px 0 5px 0;
+#error {
+    background: #f3f3f3;
+    margin: 5px 0 5px 0;
+    padding: 5px 0 5px 0;
 }
-#error h1{
-margin:2px 0 2px 0;
-font-size: 12px;
-padding: 0;
-color:#DF0009;
-font-weight:bold;
+#error h1 {
+    margin:2px 0 2px 0;
+    font-size: 12px;
+    padding: 0;
+    color:#DF0009;
+    font-weight:bold;
 }
-#generated h1{
-margin:2px 0 2px 0;
-font-size: 12px;
-font-weight: normal;
-padding: 0;
+#generated h1 {
+    margin:2px 0 2px 0;
+    font-size: 12px;
+    font-weight: normal;
+    padding: 0;
 }
